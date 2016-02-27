@@ -255,6 +255,10 @@
     <Compile Include="Logging\ClearLogTask.cs" />
     <Compile Include="Media\AzurePictureService.cs" />
     <Compile Include="Media\ResizeType.cs" />
+    <Compile Include="Messages\BytehandSMSSender.cs" />
+    <Compile Include="Messages\IPhoneNumberFormatter.cs" />
+    <Compile Include="Messages\ISMSSender.cs" />
+    <Compile Include="Messages\PhoneNumberFormatter.cs" />
     <Compile Include="Orders\IReturnRequestService.cs" />
     <Compile Include="Orders\IRewardPointService.cs" />
     <Compile Include="Orders\RewardPointService.cs" />

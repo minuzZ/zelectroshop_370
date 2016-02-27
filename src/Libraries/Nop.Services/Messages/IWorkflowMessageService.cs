@@ -169,6 +169,13 @@ namespace Nop.Services.Messages
         int SendNewOrderNoteAddedCustomerNotification(OrderNote orderNote, int languageId);
 
         /// <summary>
+        /// Sends an SMS notification when order is shipped.
+        /// Configuration is obtained from Configuration->Settings->SMS
+        /// </summary>
+        /// <param name="shipment"></param>
+        void SendOrderShippedSMSNotification(Order order, Shipment ship);
+
+        /// <summary>
         /// Sends a "Recurring payment cancelled" notification to a store owner
         /// </summary>
         /// <param name="recurringPayment">Recurring payment</param>
