@@ -6,6 +6,7 @@ using Nop.Admin.Models.Common;
 using Nop.Admin.Models.Customers;
 using Nop.Admin.Models.Directory;
 using Nop.Admin.Models.Discounts;
+using Nop.Core.Domain.DynamicPrice;
 using Nop.Admin.Models.ExternalAuthentication;
 using Nop.Admin.Models.Forums;
 using Nop.Admin.Models.Localization;
@@ -41,6 +42,7 @@ using Nop.Core.Domain.Shipping;
 using Nop.Core.Domain.Stores;
 using Nop.Core.Domain.Tax;
 using Nop.Core.Domain.Topics;
+using Nop.Core.Domain.SMS;
 using Nop.Core.Domain.Vendors;
 using Nop.Core.Infrastructure;
 using Nop.Core.Plugins;
@@ -290,6 +292,7 @@ namespace Nop.Admin.Infrastructure
                 .ForMember(dest => dest.BackorderMode, mo => mo.Ignore())
                 .ForMember(dest => dest.DownloadActivationType, mo => mo.Ignore())
                 .ForMember(dest => dest.GiftCardType, mo => mo.Ignore())
+                .ForMember(dest => dest.FirstCostCurrencyType, mo => mo.Ignore())
                 .ForMember(dest => dest.LowStockActivity, mo => mo.Ignore())
                 .ForMember(dest => dest.ManageInventoryMethod, mo => mo.Ignore())
                 .ForMember(dest => dest.RecurringCyclePeriod, mo => mo.Ignore())
@@ -681,6 +684,22 @@ namespace Nop.Admin.Infrastructure
                 .ForMember(dest => dest.CustomProperties, mo => mo.Ignore());
             Mapper.CreateMap<VendorSettingsModel, VendorSettings>()
                 .ForMember(dest => dest.DefaultVendorPageSizeOptions, mo => mo.Ignore());
+            Mapper.CreateMap<SMSSettings, SMSSettingsModel>()
+                .ForMember(dest => dest.ActiveStoreScopeConfiguration, mo => mo.Ignore())
+                .ForMember(dest => dest.CountryCode_OverrideForStore, mo => mo.Ignore())
+                .ForMember(dest => dest.From_OverrideForStore, mo => mo.Ignore())
+                .ForMember(dest => dest.MessageTemplate_OverrideForStore, mo => mo.Ignore())
+                .ForMember(dest => dest.NumberLength_OverrideForStore, mo => mo.Ignore())
+                .ForMember(dest => dest.ServiceId_OverrideForStore, mo => mo.Ignore())
+                .ForMember(dest => dest.ServiceKey_OverrideForStore, mo => mo.Ignore())
+                .ForMember(dest => dest.CustomProperties, mo => mo.Ignore());
+            Mapper.CreateMap<SMSSettingsModel, SMSSettings>();
+            Mapper.CreateMap<DynamicPriceSettings, DynamicPriceSettingsModel>()
+                .ForMember(dest => dest.ActiveStoreScopeConfiguration, mo => mo.Ignore())
+                .ForMember(dest => dest.EuroRate_OverrideForStore, mo => mo.Ignore())
+                .ForMember(dest => dest.DollarRate_OverrideForStore, mo => mo.Ignore())
+                .ForMember(dest => dest.CustomProperties, mo => mo.Ignore());
+            Mapper.CreateMap<DynamicPriceSettingsModel, DynamicPriceSettings>();
             Mapper.CreateMap<ShippingSettings, ShippingSettingsModel>()
                 .ForMember(dest => dest.ShippingOriginAddress, mo => mo.Ignore())
                 .ForMember(dest => dest.ActiveStoreScopeConfiguration, mo => mo.Ignore())

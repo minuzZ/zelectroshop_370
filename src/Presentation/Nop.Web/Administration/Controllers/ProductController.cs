@@ -3053,9 +3053,11 @@ namespace Nop.Admin.Controllers
                 {
                     Id = x.Id,
                     Name = x.Name,
-                    Sku = x.Sku,
-                    OldPrice = x.OldPrice,
+                    FirstCost = x.FirstCost,
+                    CurrencyId = x.FirstCostCurrencyTypeId,
+                    DesiredProfit = x.DesiredProfit,
                     Price = x.Price,
+                    DollarPrice = x.DollarPrice,
                     ManageInventoryMethod = x.ManageInventoryMethod.GetLocalizedEnum(_localizationService, _workContext.WorkingLanguage.Id),
                     StockQuantity = x.StockQuantity,
                     Published = x.Published
@@ -3095,9 +3097,11 @@ namespace Nop.Admin.Controllers
 
                         var prevStockQuantity = product.GetTotalStockQuantity();
 
-                        product.Sku = pModel.Sku;
+                        product.FirstCost = pModel.FirstCost;
+                        product.FirstCostCurrencyTypeId = pModel.CurrencyId;
+                        product.DesiredProfit = pModel.DesiredProfit;
                         product.Price = pModel.Price;
-                        product.OldPrice = pModel.OldPrice;
+                        product.DollarPrice = pModel.DollarPrice;
                         product.StockQuantity = pModel.StockQuantity;
                         product.Published = pModel.Published;
                         _productService.UpdateProduct(product);

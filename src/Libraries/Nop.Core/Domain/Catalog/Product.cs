@@ -352,6 +352,23 @@ namespace Nop.Core.Domain.Catalog
         /// </summary>
         public decimal OldPrice { get; set; }
         /// <summary>
+        /// Gets or sets the first cost
+        /// </summary>
+        public decimal FirstCost { get; set; }
+        /// <summary>
+        /// Gets or sets the dollar price for admin
+        /// It is recalculated with dynamic price
+        /// </summary>
+        public decimal DollarPrice { get; set; }
+        /// <summary>
+        /// Gets or sets the first cost currency type identifier
+        /// </summary>
+        public int FirstCostCurrencyTypeId { get; set; }
+        /// <summary>
+        /// Gets or sets the desired profit based on first cost
+        /// </summary>
+        public int DesiredProfit { get; set; }
+        /// <summary>
         /// Gets or sets the product cost
         /// </summary>
         public decimal ProductCost { get; set; }
@@ -544,6 +561,21 @@ namespace Nop.Core.Domain.Catalog
             set
             {
                 this.GiftCardTypeId = (int)value;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the first cost currency type
+        /// </summary>
+        public FirstCostCurrencyType FirstCostCurrencyType
+        {
+            get
+            {
+                return (FirstCostCurrencyType)this.FirstCostCurrencyTypeId;
+            }
+            set
+            {
+                this.FirstCostCurrencyTypeId = (int)value;
             }
         }
 

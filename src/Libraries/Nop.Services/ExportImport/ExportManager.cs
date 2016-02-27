@@ -299,6 +299,10 @@ namespace Nop.Services.ExportImport
                 xmlWriter.WriteElementString("PreOrderAvailabilityStartDateTimeUtc", null, product.PreOrderAvailabilityStartDateTimeUtc.HasValue ? product.PreOrderAvailabilityStartDateTimeUtc.ToString() : "");
                 xmlWriter.WriteElementString("CallForPrice", null, product.CallForPrice.ToString());
                 xmlWriter.WriteElementString("Price", null, product.Price.ToString());
+                xmlWriter.WriteElementString("FirstCost", null, product.FirstCost.ToString());
+                xmlWriter.WriteElementString("FirstCostCurrencyType", null, product.FirstCostCurrencyType.ToString());
+                xmlWriter.WriteElementString("DesiredProfit", null, product.DesiredProfit.ToString());
+                xmlWriter.WriteElementString("DollarPrice", null, product.DollarPrice.ToString());
                 xmlWriter.WriteElementString("OldPrice", null, product.OldPrice.ToString());
                 xmlWriter.WriteElementString("ProductCost", null, product.ProductCost.ToString());
                 xmlWriter.WriteElementString("SpecialPrice", null, product.SpecialPrice.HasValue ? product.SpecialPrice.ToString() : "");
@@ -581,6 +585,10 @@ namespace Nop.Services.ExportImport
                     "PreOrderAvailabilityStartDateTimeUtc",
                     "CallForPrice",
                     "Price",
+                    "FirstCost",
+                    "FirstCostCurrencyTypeId",
+                    "DesiredProfit",
+                    "DollarPrice",
                     "OldPrice",
                     "ProductCost",
                     "SpecialPrice",
@@ -827,6 +835,18 @@ namespace Nop.Services.ExportImport
                     col++;
 
                     worksheet.Cells[row, col].Value = p.Price;
+                    col++;
+
+                    worksheet.Cells[row, col].Value = p.FirstCost;
+                    col++;
+
+                    worksheet.Cells[row, col].Value = p.FirstCostCurrencyTypeId;
+                    col++;
+
+                    worksheet.Cells[row, col].Value = p.DesiredProfit;
+                    col++;
+
+                    worksheet.Cells[row, col].Value = p.DollarPrice;
                     col++;
 
                     worksheet.Cells[row, col].Value = p.OldPrice;

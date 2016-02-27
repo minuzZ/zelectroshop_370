@@ -30,6 +30,7 @@ using Nop.Core.Domain.Common;
 using Nop.Core.Domain.Customers;
 using Nop.Core.Domain.Directory;
 using Nop.Core.Domain.Discounts;
+using Nop.Core.Domain.DynamicPrice;
 using Nop.Core.Domain.Forums;
 using Nop.Core.Domain.Localization;
 using Nop.Core.Domain.Logging;
@@ -39,6 +40,7 @@ using Nop.Core.Domain.News;
 using Nop.Core.Domain.Orders;
 using Nop.Core.Domain.Polls;
 using Nop.Core.Domain.Shipping;
+using Nop.Core.Domain.SMS;
 using Nop.Core.Domain.Stores;
 using Nop.Core.Domain.Tax;
 using Nop.Core.Domain.Topics;
@@ -924,6 +926,31 @@ namespace Nop.Admin.Extensions
             return model.MapTo(destination);
         }
 
+        public static SMSSettingsModel ToModel(this SMSSettings entity)
+        {
+            return Mapper.Map<SMSSettings, SMSSettingsModel>(entity);
+        }
+        public static SMSSettings ToEntity(this SMSSettingsModel model)
+        {
+            return Mapper.Map<SMSSettingsModel, SMSSettings>(model);
+        }
+        public static SMSSettings ToEntity(this SMSSettingsModel model, SMSSettings destination)
+        {
+            return Mapper.Map(model, destination);
+        }
+
+        public static DynamicPriceSettingsModel ToModel(this DynamicPriceSettings entity)
+        {
+            return Mapper.Map<DynamicPriceSettings, DynamicPriceSettingsModel>(entity);
+        }
+        public static DynamicPriceSettings ToEntity(this DynamicPriceSettingsModel model)
+        {
+            return Mapper.Map<DynamicPriceSettingsModel, DynamicPriceSettings>(model);
+        }
+        public static DynamicPriceSettings ToEntity(this DynamicPriceSettingsModel model, DynamicPriceSettings destination)
+        {
+            return Mapper.Map(model, destination);
+        }
 
         public static NewsSettingsModel ToModel(this NewsSettings entity)
         {
