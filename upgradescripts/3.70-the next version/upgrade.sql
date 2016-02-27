@@ -23,6 +23,30 @@ set @resources='
   <LocaleResource Name="Admin.Catalog.Products.ProductAttributes.Attributes.Values.Fields.ImageSquaresPicture.Hint">
     <Value>Upload a picture to be used with the image squares attribute control</Value>
   </LocaleResource>
+  <LocaleResource Name="Admin.Configuration.Settings.SMS">
+    <Value>SMS</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Configuration.Settings.SMS.Sender">
+    <Value>Sender</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Configuration.Settings.SMS.CountryCode">
+    <Value>Country code</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Configuration.Settings.SMS.NumberLength">
+    <Value>Number length without country code</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Configuration.Settings.SMS.MessageTemplate">
+    <Value>Message template</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Configuration.Settings.SMS.ServiceId">
+    <Value>Bytehand service id</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Configuration.Settings.SMS.ServiceKey">
+    <Value>Bytehand service key</Value>
+  </LocaleResource>
+  <LocaleResource Name="ShoppingCart.NotInStock">
+    <Value>Not in stock</Value>
+  </LocaleResource>
 </Language>
 '
 
@@ -121,5 +145,53 @@ IF NOT EXISTS (SELECT 1 FROM [Setting] WHERE [name] = N'mediasettings.imagesquar
 BEGIN
 	INSERT [Setting] ([Name], [Value], [StoreId])
 	VALUES (N'mediasettings.imagesquarepicturesize', N'32', 0)
+END
+GO
+
+--new setting
+IF NOT EXISTS (SELECT 1 FROM [Setting] WHERE [name] = N'smssettings.from')
+BEGIN
+	INSERT [Setting] ([Name], [Value], [StoreId])
+	VALUES (N'smssettings.from', N'', 0)
+END
+GO
+
+--new setting
+IF NOT EXISTS (SELECT 1 FROM [Setting] WHERE [name] = N'smssettings.countrycode')
+BEGIN
+	INSERT [Setting] ([Name], [Value], [StoreId])
+	VALUES (N'smssettings.countrycode', N'', 0)
+END
+GO
+
+--new setting
+IF NOT EXISTS (SELECT 1 FROM [Setting] WHERE [name] = N'smssettings.messagetemplate')
+BEGIN
+	INSERT [Setting] ([Name], [Value], [StoreId])
+	VALUES (N'smssettings.messagetemplate', N'', 0)
+END
+GO
+
+--new setting
+IF NOT EXISTS (SELECT 1 FROM [Setting] WHERE [name] = N'smssettings.serviceid')
+BEGIN
+	INSERT [Setting] ([Name], [Value], [StoreId])
+	VALUES (N'smssettings.serviceid', N'', 0)
+END
+GO
+
+--new setting
+IF NOT EXISTS (SELECT 1 FROM [Setting] WHERE [name] = N'smssettings.servicekey')
+BEGIN
+	INSERT [Setting] ([Name], [Value], [StoreId])
+	VALUES (N'smssettings.servicekey', N'', 0)
+END
+GO
+
+--new setting
+IF NOT EXISTS (SELECT 1 FROM [Setting] WHERE [name] = N'smssettings.numberlength')
+BEGIN
+	INSERT [Setting] ([Name], [Value], [StoreId])
+	VALUES (N'smssettings.numberlength', N'', 0)
 END
 GO

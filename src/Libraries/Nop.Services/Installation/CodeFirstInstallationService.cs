@@ -25,6 +25,7 @@ using Nop.Core.Domain.Polls;
 using Nop.Core.Domain.Security;
 using Nop.Core.Domain.Seo;
 using Nop.Core.Domain.Shipping;
+using Nop.Core.Domain.SMS;
 using Nop.Core.Domain.Stores;
 using Nop.Core.Domain.Tasks;
 using Nop.Core.Domain.Tax;
@@ -5002,6 +5003,13 @@ namespace Nop.Services.Installation
                 ShowVendorOnProductDetailsPage = true,
                 AllowCustomersToContactVendors = true,
                 AllowCustomersToApplyForVendorAccount = true
+            });
+
+            settingService.SaveSetting(new SMSSettings()
+            {
+                From = "",
+                CountryCode = "+7",
+                MessageTemplate = "Order was shipped. Tracknum: {0}",
             });
 
             var eaGeneral = _emailAccountRepository.Table.FirstOrDefault();

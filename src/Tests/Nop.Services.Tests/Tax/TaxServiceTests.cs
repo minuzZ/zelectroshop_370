@@ -155,25 +155,6 @@ namespace Nop.Services.Tests.Tax
         }
 
         [Test]
-        public void Can_do_VAT_check()
-        {
-            //remove? this method requires Internet access
-
-            string name, address;
-            Exception exception;
-
-            VatNumberStatus vatNumberStatus1 = _taxService.DoVatCheck("GB", "523 2392 69",
-                out name, out address, out exception);
-            vatNumberStatus1.ShouldEqual(VatNumberStatus.Valid);
-            exception.ShouldBeNull();
-
-            VatNumberStatus vatNumberStatus2 = _taxService.DoVatCheck("GB", "000 0000 00",
-                out name, out address, out exception);
-            vatNumberStatus2.ShouldEqual(VatNumberStatus.Invalid);
-            exception.ShouldBeNull();
-        }
-
-        [Test]
         public void Should_assume_valid_VAT_number_if_EuVatAssumeValid_setting_is_true()
         {
             _taxSettings.EuVatAssumeValid = true;
