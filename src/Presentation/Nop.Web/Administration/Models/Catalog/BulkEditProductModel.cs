@@ -10,6 +10,10 @@ namespace Nop.Admin.Models.Catalog
         [AllowHtml]
         public string Name { get; set; }
 
+        [NopResourceDisplayName("Admin.Catalog.BulkEdit.Fields.AdminComment")]
+        [AllowHtml]
+        public string AdminComment { get; set; }
+
         [NopResourceDisplayName("Admin.Catalog.BulkEdit.Fields.FirstCost")]
         public decimal FirstCost { get; set; }
 

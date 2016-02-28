@@ -3053,6 +3053,7 @@ namespace Nop.Admin.Controllers
                 {
                     Id = x.Id,
                     Name = x.Name,
+                    AdminComment = x.AdminComment,
                     FirstCost = x.FirstCost,
                     CurrencyId = x.FirstCostCurrencyTypeId,
                     DesiredProfit = x.DesiredProfit,
@@ -3097,6 +3098,7 @@ namespace Nop.Admin.Controllers
 
                         var prevStockQuantity = product.GetTotalStockQuantity();
 
+                        product.AdminComment = pModel.AdminComment;
                         product.FirstCost = pModel.FirstCost;
                         product.FirstCostCurrencyTypeId = pModel.CurrencyId;
                         product.DesiredProfit = pModel.DesiredProfit;

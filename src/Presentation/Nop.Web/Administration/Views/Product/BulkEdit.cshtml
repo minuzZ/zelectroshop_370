@@ -121,6 +121,7 @@
                                         fields: {
                                             Name: { editable: false, type: "string" },
                                             ProductId: { editable: false, type: "number" },
+                                            AdminComment: { editable: true, type: "string" },
                                             FirstCost: { editable: true, type: "number" },
                                             CurrencyId: { editable: true, type: "number" },
                                             DesiredProfit: { editable: true, type: "number" },
@@ -170,7 +171,11 @@
                                     title: "@T("Admin.Common.View")",
                                     width: 100,
                                     template: '<a href="@Url.Content("~/Admin/Product/Edit/")#=Id#">@T("Admin.Common.View")</a>'
-                                },{
+                                }, {
+                                    field: "AdminComment",
+                                    title: "@T("Admin.Catalog.BulkEdit.Fields.AdminComment")",
+                                    width: 150
+                                }, {
                                     field: "FirstCost",
                                     title: "@T("Admin.Catalog.BulkEdit.Fields.FirstCost")",
                                     width: 150,
