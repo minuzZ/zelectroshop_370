@@ -1150,6 +1150,7 @@
     <Content Include="Content\Roxy_Fileman\lang\it.json" />
     <Content Include="Content\Roxy_Fileman\lang\pl.json" />
     <Content Include="Content\Roxy_Fileman\lang\pt.json" />
+    <None Include="Properties\PublishProfiles\local.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\fineuploader\iframe.xss.response-4.2.2.js" />
     <Content Include="Scripts\fineuploader\jquery.fineuploader-4.2.2.js" />
@@ -1678,6 +1679,7 @@
     <Content Include="Themes\DefaultClean\Content\images\last.png" />
     <Content Include="Themes\DefaultClean\Content\images\loading.gif" />
     <Content Include="Themes\DefaultClean\Content\images\logo.png" />
+    <Content Include="Themes\DefaultClean\Content\images\cat-icon.png" />
     <Content Include="Themes\DefaultClean\Content\images\menu-icon.png" />
     <Content Include="Themes\DefaultClean\Content\images\move.png" />
     <Content Include="Themes\DefaultClean\Content\images\new.png" />
@@ -2031,6 +2033,15 @@
     <Content Include="Views\Catalog\_CatalogSelectors.cshtml" />
     <Content Include="Views\Vendor\ApplyVendor.cshtml" />
     <Content Include="Views\Product\_Discontinued.cshtml" />
+    <Content Include="Themes\DefaultClean\Views\Shared\Header.cshtml" />
+    <Content Include="Themes\DefaultClean\Views\Home\Index.cshtml" />
+    <Content Include="Themes\DefaultClean\Views\Catalog\TopMenu.cshtml" />
+    <Content Include="Themes\DefaultClean\Views\Topic\TopicBlock.cshtml" />
+    <Content Include="Themes\DefaultClean\Views\Common\Footer.cshtml" />
+    <Content Include="Themes\DefaultClean\Views\Product\RelatedProducts.cshtml" />
+    <Content Include="Themes\DefaultClean\Views\Catalog\CategoryTemplate.ProductsInGridOrLines.cshtml" />
+    <Content Include="Themes\DefaultClean\Views\Product\_AddToCart.cshtml" />
+    <Content Include="Themes\DefaultClean\Views\Shared\_ProductBox.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\Roxy_Fileman\tmp\" />
