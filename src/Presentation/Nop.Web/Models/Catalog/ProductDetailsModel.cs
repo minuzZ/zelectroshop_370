@@ -132,6 +132,7 @@ namespace Nop.Web.Models.Catalog
             public int EnteredQuantity { get; set; }
             public string MinimumQuantityNotification { get; set; }
             public List<SelectListItem> AllowedQuantities { get; set; }
+            public int StockQuantity { get; set; }
 
             //price entered by customers
             [NopResourceDisplayName("Products.EnterProductPrice")]

@@ -43,6 +43,8 @@ namespace Nop.Web.Models.Catalog
             public bool DisableWishlistButton { get; set; }
             public bool DisableAddToCompareListButton { get; set; }
 
+            public int StockQuantity { get; set; }
+
             public bool AvailableForPreOrder { get; set; }
             public DateTime? PreOrderAvailabilityStartDateTimeUtc { get; set; }
 

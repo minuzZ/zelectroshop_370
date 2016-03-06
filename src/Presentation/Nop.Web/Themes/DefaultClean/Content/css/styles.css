@@ -1459,6 +1459,12 @@ label, label + * {
 .item-box .product-box-add-to-cart-button:hover {
 	background-color: #248ece;
 }
+.item-box .product-box-add-to-cart-button-disabled {
+	background-color: #888888 !important;
+}
+.item-box .product-box-add-to-cart-button-disabled:hover {
+	background-color: #888888 !important;
+}
 .item-box .add-to-compare-list-button,
 .item-box .add-to-wishlist-button {
 	width: 20%;
@@ -1953,6 +1959,14 @@ label, label + * {
 .overview .add-to-cart-button:hover,
 .variant-overview .add-to-cart-button:hover {
 	background-color: #248ece;
+}
+.overview .add-to-cart-button-disabled,
+.variant-overview .add-to-cart-button-disabled {
+	background-color: #888888 !important;
+}
+.overview .add-to-cart-button-disabled:hover,
+.variant-overview .add-to-cart-button-disabled:hover {
+	background-color: #888888 !important;
 }
 
 .product-share-button {
